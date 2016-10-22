@@ -80,7 +80,7 @@ var Engine = (function(global) {
      */
     function update(dt) {
         updateEntities(dt);
-        // checkCollisions();
+         checkCollisions();
     }
 
     /* This is called by the update function and loops through all of the
@@ -90,6 +90,10 @@ var Engine = (function(global) {
      * the data/properties related to the object. Do your drawing in your
      * render methods.
      */
+
+   
+
+
     function updateEntities(dt) {
         allEnemies.forEach(function(enemy) {
             enemy.update(dt);
@@ -98,7 +102,23 @@ var Engine = (function(global) {
     }
 
     // the below function is used for collision detection  
- 
+     function  checkCollisions(){
+
+        allEnemies.forEach(function(enemy) {
+            var lowx=enemy.x-50;
+            var highx=enemy.x+50;
+            var lowy=enemy.y-30;
+            var highy=enemy.y+30;
+
+            if ((player.x>lowx && player.x< highx)&&(player.y>lowy && player.y< highy)){// && enemy.y==player.y){
+                player.x=250;
+                player.y=350;
+
+            }
+
+        });
+
+        }
 
     /* This function initially draws the "game level", it will then call
      * the renderEntities function. Remember, this function is called every
