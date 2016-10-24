@@ -70,18 +70,18 @@ player.prototype.handleInput=function(key){
   // at the step of 101px in y-axis directon and 83px in x-axis direction.
    
     if (key==="left") {
-     this.loc(-43,0);
+     this.loc(-83,0);
 
     }
     if (key==="right") {
-     this.loc(-43,0);
+     this.loc(-83,0);
     }
     if (key==="up") {
 
-     this.loc(0,-50);
+     this.loc(0,-101);
     }
     if (key==="down") {
-     this.loc(0,50);
+     this.loc(0,101);
     }  
 
 this.key=key;
